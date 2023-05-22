@@ -116,3 +116,8 @@
 
 # Ejemplo 8
 
+    Vemos como llamar desde un workflow a otro estando este en el mismo repo, ademas pasando variables entre ambos
+    tanto de entrada como de salida
+
+# Ejemplo 9
+
