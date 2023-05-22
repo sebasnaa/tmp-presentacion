@@ -22,14 +22,28 @@
 
     #### it will skip job 3, but notice how job 4 also skipped
 
+    
+
 
 # Ejemplo 3 variable y contexto
 
     # Mencionar los Contextos ver enlace WEB
 
+    Need : Contains the outputs of all jobs that are defined as a dependency of the current job.
+    env: Contains variables set in a workflow, job, or step.
+   
+    # environment variables
+    ### you can define env variables for all jobs, specific jobs, or specific steps
+    ### we've defined three workflow level env variables
+
+    # Mencionar que You can have output variables at both the job and the step level.
 
     # Breve explicacion de el flujo
+    ### job2 shows how you can output step variables, and job variables
+    ### job3 consults the output from job 2
+    ### go back to the workflow run and look at job2 and job3 output
 
+ 
 
     # Mencionar que esto esta obsoleto aunque hay ejemplos con este formato
         ################ Deprecated ################
@@ -38,3 +52,12 @@
     # Comentar resultado final de los outputs de las variables
 
     # Var3 has step value, var2 has job value, and job1 has workflow value.
+    # VAr3 tiene el valor del step
+    # Var2 tiene el valor del job
+    # VAr1 tiene el valor del workflow
+
+
+
+# Ejemplo 4 Cache
+
+    # Comentar el with que son los parametros para los uses: actions/.....
