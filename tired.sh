@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# random message
+# random message from web
 message=$(curl -L -s http://whatthecommit.com/ |grep -A 1 "\"c" |tail -1 |sed 's/<p>//')
 
 git add ./
