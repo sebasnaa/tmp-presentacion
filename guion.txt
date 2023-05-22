@@ -85,3 +85,4 @@ Mostramos la declaracion de env en script  database.js, usando environment y el 
 
 # Por defecto se deja como está
 # Podemos probar el continue-on-error: true agregando la version 14 a node
+# Lo lanzamos primero agregandoe l 14 sin agregar el continue y despues lo agregamos
