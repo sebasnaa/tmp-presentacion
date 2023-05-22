@@ -7,7 +7,7 @@ jobs:
   build:
     # Por defecto al fallar una combinacion no se ejecutan mas job de ese valor, podemos evitar eso 
     # agregando  continue-on-error: true  probar con veriosn 12 de node
-    # continue-on-error: true
+    continue-on-error: true
     strategy:
       matrix:
         node-version: [14, 16, 18]
