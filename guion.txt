@@ -63,3 +63,10 @@
     # Comentar el with que son los parametros para los uses: actions/.....
 
     # Ver el ejemplo de ver como hace caching de las dependencias
+
+    # Tras comprobar como utiliza lo existente
+    # npm outdated
+    # npm install <packagename>@latest
+    # npm install eslint@8.41.0
+    # eslint                   8.40.0  8.41.0
+    # // "eslint": "^8.23.0",
