@@ -6,13 +6,13 @@ gh workflow list -a
 
 
 gh workflow disable "1-Pull-request-Event"
+gh workflow disable "1-Push-Event"
+gh workflow disable "1-Issues-Event"
 gh workflow disable "2-Jobs-Encadenados"
 gh workflow disable "3-Variables-Context"
 gh workflow disable "4-Push-Using-Caching"
 gh workflow disable "4-Push-No-Using-Caching"
-gh workflow disable "1-Issues-Event"
-gh workflow disable "1-Push-Event"
-
+gh workflow disable "5-Connecto-MongoDB"
 
 
 if [ $# -gt 0 ]
