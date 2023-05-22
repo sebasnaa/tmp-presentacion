@@ -90,6 +90,7 @@
 
 # Ejemplo 7
 
+    Execution-Flow.yml
 
  # Agregamos un fallo al codigo para que falle Test en 7-Execution-Flow
 
@@ -110,3 +111,5 @@
     - cancelled() return true if the workflows have been canceled
 
 
+    Podemos agregar  if:  steps.cache.outputs.cache-hit != 'true' consiguiendo que ignore el step 
+    al hacer match con lo necesario
