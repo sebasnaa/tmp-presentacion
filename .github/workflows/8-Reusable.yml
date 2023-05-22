@@ -15,7 +15,7 @@ on:
         description: The result of the deployment operation
         value: ${{ jobs.deploy.outputs.outcome }}
 jobs:
-  deploy:
+  deploy-inside:
     outputs:
       outcome: ${{ steps.set-result.outputs.step-result }}
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: ${{ inputs.artifact-name }}
-      - name: Lsit artifact files
+      - name: List artifact files
         run: ls
       - name: Output information
         run: echo 'Deploy information'
