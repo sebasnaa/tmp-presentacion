@@ -1,6 +1,6 @@
 ######### Agregar software que ay traen lso agentes por defecto 
 
-# Ejemplo Push y Issues
+# Ejemplo 1     Push y Issues
 
     ## Mostrar como se activa tras el push, crear un issue
     ## Mostrar el gh y como podemos activar o desactivar los workflow
@@ -12,3 +12,14 @@
     '''
 
 
+# Ejemplo 2 
+
+    # Mencionar los Contextos ver enlace WEB
+
+    # Mencionar que esto esta obsoleto aunque hay ejemplos con este formato
+        ################ Deprecated ################
+        # run: echo "::set-output name=step1value::hello"
+
+    # Comentar resultado final de los outputs de las variables
+
+    # Var3 has step value, var2 has job value, and job1 has workflow value.

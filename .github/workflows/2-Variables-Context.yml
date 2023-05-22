@@ -1,0 +1,72 @@
+
+name: 2-Variables-Context
+
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name of the new SeaHorse'
+        default: 'Arturo'
+        required: true
+
+env:
+  VAR1: myworkflowvar1
+  VAR2: myworkflowvar2
+  VAR3: myworkflowvar3
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      
+  job2:
+    runs-on: ubuntu-latest
+    
+    outputs:
+      output1: ${{ steps.step1.outputs.step1value }}
+      output2: ${{ steps.step2.outputs.step2value }}
+    
+    steps:
+      - name: Step 1
+        id: step1
+        ################ Deprecated ################
+        # run: echo "::set-output name=step1value::hello"
+        run: echo "step1value=hello" >> $GITHUB_OUTPUT
+
+      - name: Step 2
+        id: step2
+        run: echo "step2value=world" >> $GITHUB_OUTPUT
+  
+  job3:
+    runs-on: ubuntu-latest
+    needs: job2
+    steps:
+      - run: echo ${{needs.job2.outputs.output1}} ${{needs.job2.outputs.output2}}
+
+  job4:
+    runs-on: ubuntu-latest
+    env:
+      VAR2: myjobvar2
+      VAR3: myjobvar3
+    steps:
+
+      - run: |
+          echo $VAR1
+          echo ${{env.VAR1}}
+
+          echo ""
+
+          echo $VAR2
+          echo ${{env.VAR2}}
+
+          echo $VAR3
+        env: 
+          VAR3: mystepvar3
+        
