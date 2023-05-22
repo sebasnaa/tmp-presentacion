@@ -1,0 +1,11 @@
+name: Event details
+on: 
+  - issues
+  - workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event details
+        run: echo "${{toJSON(github)}}"
+  
