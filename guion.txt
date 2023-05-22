@@ -11,14 +11,25 @@
     workflow_dispatch: 
     '''
 
+# Ejemplo 2 need y condicional
 
-# Ejemplo 2 
+    # Run the workflow. All jobs should run in parallel. 
+    
+    #we want to execute Job1 => Job2, Job3 => Job4
+
+    #We also want to use this to show conditional statements 
+    #Uncomment/explain the if statement on Job 3, and run the job, setting the parameter to false
+
+    #### it will skip job 3, but notice how job 4 also skipped
+
+
+# Ejemplo 3 variable y contexto
 
     # Mencionar los Contextos ver enlace WEB
 
 
     # Breve explicacion de el flujo
-    
+
 
     # Mencionar que esto esta obsoleto aunque hay ejemplos con este formato
         ################ Deprecated ################

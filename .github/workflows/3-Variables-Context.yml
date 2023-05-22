@@ -1,5 +1,5 @@
 
-name: 2-Variables-Context
+name: 3-Variables-Context
 
 on:
   workflow_dispatch:
