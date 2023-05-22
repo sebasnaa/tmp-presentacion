@@ -72,3 +72,13 @@
     # // "eslint": "^8.23.0",
 
     # Comprobamos como ha creado un nuevo objeto en Managent caches 
+
+
+# Secretos , environment y aprovals
+
+# Ejemplo 5 Cambiamos de repo a tmp-presentacion-db
+
+Mostramos la declaracion de env en script  database.js, usando environment y el scope entre 
+
+
+
