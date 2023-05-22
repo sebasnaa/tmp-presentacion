@@ -79,12 +79,12 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
-#   reports:
-#     needs: [lint,deploy]
-#     if: failure()
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Output information
-#         run: |
-#           echo "Fail something"
-#           echo '${{ toJSON(github) }}'
+  reports:
+    needs: [lint,deploy]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: |
+          echo "Fail something"
+          echo '${{ toJSON(github) }}'
