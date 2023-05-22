@@ -1,4 +1,4 @@
-name: 1. Push [Lint, Test & Deploy]
+name: 1-Push-Event
 on: push
 jobs:
   Lint:

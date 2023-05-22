@@ -1,4 +1,4 @@
-name: Event details
+name: 1-Issues-Event
 on: 
   - issues
   - workflow_dispatch
