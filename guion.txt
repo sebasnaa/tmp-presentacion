@@ -91,3 +91,6 @@ Mostramos la declaracion de env en script  database.js, usando environment y el 
 
 
  # Agregamos un fallo al codigo para que falle Test en 7-Execution-Flow
+
+ # Ahora agregamos if: failure() && steps.testCodeId.outcome == 'failure' en el Test 
+ # Nos aseguramos que pase al siguiente paso si falla el step de Test code pero no si este falla 
