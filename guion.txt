@@ -1,0 +1,14 @@
+######### Agregar software que ay traen lso agentes por defecto 
+
+# Ejemplo Push y Issues
+
+    ## Mostrar como se activa tras el push, crear un issue
+    ## Mostrar el gh y como podemos activar o desactivar los workflow
+    ## Desactivo el basado en push y modifico el issue para que entre con
+    ''' 
+    issues:
+        types: [edited, deleted]
+    workflow_dispatch: 
+    '''
+
+
