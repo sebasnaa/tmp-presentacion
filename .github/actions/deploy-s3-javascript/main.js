@@ -19,6 +19,11 @@ function run() {
 
 
 
+    const webSite = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+    
+    
+    core.setOutput('webUrl',webSite); // run: echo "step2value=world" >> $GITHUB_OUTPUT
+
     core.notice('Hello from custom JS')
 }
 
