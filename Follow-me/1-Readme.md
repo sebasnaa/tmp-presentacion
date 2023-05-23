@@ -1,10 +1,6 @@
 # Push, Pull request, Issues....
 
 
-## Ficheros
-
-
-
 
 ## Objetivo
 
