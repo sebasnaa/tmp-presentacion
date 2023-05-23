@@ -16,6 +16,7 @@ on:
   push:
     branches:
       - 'main'
+      - '!master'
 ```
 3. Modificar el código
 ```
@@ -23,9 +24,14 @@ on:
   push:
     branches:
       - '!main'
+      - 'master'
 ```
 
 
 - ### [Issues Event](https://github.com/sebasnaa/tmp-presentacion/blob/master/.github/workflows/1-Issues-Event.yml)
+
+---
+ ### Posibles pruebas
+---
 
 - ### [Pull Request Event](https://github.com/sebasnaa/tmp-presentacion/blob/master/.github/workflows/1-Pull-request-Event.yml)
