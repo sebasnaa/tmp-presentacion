@@ -1,8 +1,8 @@
 name: 1-Pull-request-Event
 on:
   pull_request:
-    types:
-      - opened
+    # types:
+    #   - opened
   workflow_dispatch:
 jobs:
   deploy:
