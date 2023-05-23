@@ -124,4 +124,6 @@
 
     Utiliza uses propios donde definimos funciones en JS  y otra donde aplicamos varios criterios para aplicar caching de dependencias.
 
+    Initialmente el Jjob information lo descomentamos y comentamos todo el contenido de deploy-s3
+
 # Ejemplo 10 identico pero usar docker container con script de python
