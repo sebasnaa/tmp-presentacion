@@ -25,8 +25,8 @@ def run():
 
     website_url = f'http://{bucket}.s3-website-{bucket_region}.amazonaws.com'
 
-    with open(os.environ['GITHUB_OUTPUT'], 'a') as webUrl:
-        print(f'website-url={website_url}', file=webUrl)
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        print(f'{webUrl}={website_url}', file=fh)
 
     
 
