@@ -23,7 +23,7 @@ def run():
                 ExtraArgs={"ContentType": mimetypes.guess_type(file)[0]}
             )
 
-    website_url = f'http://{bucket}.s3-website-{bucket_region}.amazonaws.com'
+    website_url = f'http://{bucket}.s3-website.{bucket_region}.amazonaws.com'
 
     with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
         print(f'webUrl={website_url}', file=fh)
