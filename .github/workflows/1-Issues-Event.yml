@@ -1,9 +1,6 @@
 name: 1-Issues-Event
 on: 
   issues:
-      types:
-        - edited
-        - deleted
   workflow_dispatch:
 jobs:
   info:
