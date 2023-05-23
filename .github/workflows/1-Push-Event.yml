@@ -1,9 +1,6 @@
 name: 1-Push-Event
 on: 
-  push:
-    branches:
-      - '!main'
-      - 'master'
+  push
 jobs:
   Lint:
     runs-on: ubuntu-latest
