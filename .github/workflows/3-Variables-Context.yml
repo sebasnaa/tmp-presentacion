@@ -5,14 +5,14 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Name of the new SeaHorse'
+        description: 'Name of the new Rookies'
         default: 'Arturo'
         required: true
 
 env:
-  VAR1: myworkflowvar1
-  VAR2: myworkflowvar2
-  VAR3: myworkflowvar3
+  VARIABLE1: workflowvariable1
+  VARIABLE2: workflowvariable2
+  VARIABLE3: workflowvariable3
 
 jobs:
 
@@ -41,7 +41,7 @@ jobs:
 
       - name: Step 2
         id: step2
-        run: echo "step2value=world" >> $GITHUB_OUTPUT
+        run: echo "step2value=stemdoers" >> $GITHUB_OUTPUT
   
   job3:
     runs-on: ubuntu-latest
@@ -52,20 +52,20 @@ jobs:
   job4:
     runs-on: ubuntu-latest
     env:
-      VAR2: myjobvar2
-      VAR3: myjobvar3
+      VARIABLE2: jobvariable2
+      VARIABLE3: jobvariable3
     steps:
 
       - run: |
-          echo $VAR1
-          echo ${{env.VAR1}}
+          echo $VARIABLE1
+          echo ${{env.VARIABLE1}}
 
           echo ""
 
-          echo $VAR2
-          echo ${{env.VAR2}}
+          echo $VARIABLE2
+          echo ${{env.VARIABLE2}}
 
-          echo $VAR3
+          echo $VARIABLE3
         env: 
-          VAR3: mystepvar3
+          VARIABLE3: mystepvar3
         
