@@ -17,7 +17,7 @@ jobs:
           path: node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if:  steps.cache.outputs.cache-hit != 'true'
+        # if:  steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
         run: npm run lint
@@ -39,7 +39,7 @@ jobs:
         id: testCodeId
         run: npm run test
       - name: Upload test report
-        if: failure() && steps.testCodeId.outcome == 'failure'
+        # if: failure() && steps.testCodeId.outcome == 'failure'
         # if: steps.testCodeId.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
@@ -58,7 +58,7 @@ jobs:
           path: node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if:  steps.cache.outputs.cache-hit != 'true'
+        # if:  steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build website
         id: build-website

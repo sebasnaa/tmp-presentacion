@@ -17,7 +17,7 @@ jobs:
           path: node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if:  steps.cache.outputs.cache-hit != 'true'
+        # if:  steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
         run: npm run lint
@@ -37,7 +37,7 @@ jobs:
         run: npm ci
       - name: Test code
         # interpreta el step como exitoso aunque haya fallado, por eso continuan el resto de steps
-        continue-on-error: true
+        # continue-on-error: true
         id: testCodeId
         run: npm run test
       - name: Upload test report
@@ -58,7 +58,7 @@ jobs:
           path: node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if:  steps.cache.outputs.cache-hit != 'true'
+        # if:  steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build website
         id: build-website
