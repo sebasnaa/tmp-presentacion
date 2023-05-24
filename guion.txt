@@ -96,7 +96,8 @@
 
  # Agregamos un fallo al codigo para que falle Test en 7-Execution-Flow
 
- # Suponemos que queremos que el job de report se genere en el caso que falle el codigo en caso contrario es innecesario
+ # Suponemos que queremos que el job de report se genere en el caso que falle el codigo en caso contrario
+ # es innecesario
 
 
  # Ahora agregamos steps.testCodeId.outcome == 'failure' en el Test 
