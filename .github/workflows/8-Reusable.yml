@@ -13,7 +13,7 @@ on:
     outputs:
       result:
         description: The result of the deployment operation
-        value: ${{ jobs.deploy.outputs.outcome }}
+        value: ${{ jobs.deploy-inside.outputs.outcome }}
 jobs:
   deploy-inside:
     outputs:

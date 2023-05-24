@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -73,7 +74,7 @@ jobs:
       artifact-name: dist-files
     # secrets:
     #   some-secret: ${{secrets.some-secret}}
-  print-deply-result:
+  print-deploy-result:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
