@@ -2,13 +2,13 @@
 
 ## Fichero 
 
-[7-Execution-Flow.yml](https://github.com/sebasnaa/tmp-presentacion/actions/workflows/6-Matrix.yml)
+[7-Execution-Flow.yml](https://github.com/sebasnaa/tmp-presentacion/actions/workflows/7-Execution-Flow.yml)
 
 ## Objetivo
 
 Comprobar la ejecución haciendo uso de condicionales.
 
-## Posible opciones
+## Funcionamiento
 
 1. Ejecutar de forma manual o usando push, deberian funcionar paralelamente.
 

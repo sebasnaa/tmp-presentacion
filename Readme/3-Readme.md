@@ -8,7 +8,7 @@
 
 Comprobar el como funciona el scope entre el workflow, Jobs y Steps.
 
-# Posible ejecución
+## Funcionamiento
 
 1. Activar el workflow y comprobar mediante las salidas por consola los valores de las variables.
 

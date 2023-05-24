@@ -8,7 +8,7 @@
 
 Comprobar el funcionamiento ``matrix`` que nos permite crear varios jobs basados en las combinaciones de las variables de la matrix.
 
-## Posible ejecución
+## Funcionamiento
 
 1. Ejecutar de forma manual o usando push, deberian funcionar paralelamente.
 

@@ -8,7 +8,7 @@
 
 Comprobar el funcionamiento de los Jobs pudiendo ejecutar Jobs de secuencialmente o paralelamente.
 
-# Posible orden de ejecución
+## Funcionamiento
 
 1. Activar el workflow, todos los Jobs se ejecutarán en paralelo
 

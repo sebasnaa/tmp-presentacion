@@ -9,7 +9,8 @@ Poder visualizar los múltiples eventos que pueden disparar la ejecución de un 
 - ### Push Even - `Filter`
   - [File.yml](https://github.com/sebasnaa/tmp-presentacion/blob/master/.github/workflows/1-Push-Event.yml)
   - [Doc](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push)
- ### Posibles pruebas
+
+## Funcionamiento
 
 1. Inicialmente podemos realizar cualquier cambio y realizar un push que activará el workflow.
 
@@ -36,7 +37,7 @@ on:
     - [Doc](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issues)
 
 
- ### Posibles pruebas
+## Funcionamiento
 
 1. Inicialmente podemos crear un issues y veremos como activa un workflow.
 
@@ -56,7 +57,7 @@ on:
   - [File.yml](https://github.com/sebasnaa/tmp-presentacion/blob/master/.github/workflows/1-Pull-request-Event.yml)
    - [Doc](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request)
 ##
- ### Posibles pruebas
+## Funcionamiento
  
 
 1. Inicialmente podemos realizar cualquier cambio y realizar un pull request que activará el workflow.

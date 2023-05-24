@@ -8,7 +8,7 @@
 
 Visualizar como podemos en un job crear un artefacto y hacer uso del mismo en un Job futuro.
 
-## Posible ejecución
+## Funcionamiento
 
 1. Realizar cualquier cambio y realizando un push se activará el workflow o usarlo manualmente. Al finalizar tendremos el artifact disponible para su descarga.
 
