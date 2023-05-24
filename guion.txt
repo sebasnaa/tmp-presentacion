@@ -101,7 +101,7 @@
 
 
  # Ahora agregamos steps.testCodeId.outcome == 'failure' en el Test 
- # Nos aseguramos que pase al siguiente paso si falla el step de Test code pero no si este falla 
+ # Nos aseguramos que pase al siguiente paso si falla se para todo el flujo 
  # pero tenemos el caso que al fallar un step el job deja de funcionar
 
  # Para evitar agregamos la funcion failure() donde indica si any previous jobs or steps failed
