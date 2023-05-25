@@ -5,15 +5,83 @@ Los archivos .sh proporcionados, `tired.sh` e `initial-setup.sh`, son scripts de
 
 ## El script `initial-setup.sh`
 
-El script `initial-setup.sh` se encarga de habilitar o deshabilitar las acciones (workflows) en un repositorio. Su funcionalidad se basa en la herramienta de línea de comandos `gh` (GitHub CLI). El script realiza lo siguiente:
+El script `initial-setup.sh` es un script de Bash que te ayuda a administrar la activación y desactivación de flujos de trabajo en tu repositorio de GitHub utilizando la GitHub CLI `gh`. Este script te permite habilitar o deshabilitar todos los flujos de trabajo o flujos de trabajo específicos basados en sus prefijos numéricos.
 
-1. Obtiene la lista de acciones existentes en el repositorio utilizando el comando `gh workflow list -a` y lo guarda en la variable `actions`.
+### Requisitos Previos
 
-2. Si el primer argumento pasado al script es `enable`, habilita todas las acciones.
+Antes de utilizar el script, asegúrate de tener lo siguiente:
 
-3. Si el primer argumento pasado al script es `disable`, deshabilita todas las acciones.
+- GitHub CLI (gh) instalado y configurado correctamente en tu entorno local.
+- Permiso para habilitar/deshabilitar flujos de trabajo en tu repositorio de GitHub.
 
-4. Si el primer argumento pasado al script es un número del 1 al 9, habilita todas las acciones cuyos nombres comienzan con ese número.
+### Uso
+
+Para utilizar el script `initial-setup.sh`, sigue las siguientes instrucciones:
+
+1. Abre una terminal o símbolo del sistema.
+2. Navega al directorio donde se encuentra el script.
+3. Ejecuta el script con el comando deseado.
+
+#### Habilitar Todos los Flujos de Trabajo
+
+Para habilitar todos los flujos de trabajo en tu repositorio, utiliza el siguiente comando:
+```
+./initial-setup.sh enableAll
+```
+
+Este comando habilitará todos los flujos de trabajo disponibles en tu repositorio.
+
+#### Deshabilitar Todos los Flujos de Trabajo
+
+Para deshabilitar todos los flujos de trabajo en tu repositorio, utiliza el siguiente comando:
+
+```
+./initial-setup.sh disableAll
+```
+
+Este comando deshabilitará todos los flujos de trabajo en tu repositorio.
+
+#### Habilitar Flujos de Trabajo Específicos
+
+Para habilitar flujos de trabajo específicos basados en sus prefijos numéricos, utiliza el siguiente comando:
+
+```
+./initial-setup.sh enable <número>
+```
+
+Reemplaza `<número>` con el prefijo numérico deseado. Por ejemplo, para habilitar los flujos de trabajo con el prefijo "1-", utiliza el siguiente comando:
+
+
+```
+./initial-setup.sh enable 1
+```
+
+Este comando habilitará todos los flujos de trabajo que comiencen con el número 1.
+
+#### Deshabilitar Flujos de Trabajo Específicos
+
+Para deshabilitar flujos de trabajo específicos basados en sus prefijos numéricos, utiliza el siguiente comando:
+
+```
+./initial-setup.sh disable <número>
+```
+
+
+Reemplaza `<número>` con el prefijo numérico deseado. Por ejemplo, para deshabilitar los flujos de trabajo con el prefijo "1-", utiliza el siguiente comando:
+
+```
+./initial-setup.sh disable 1
+```
+
+
+Este comando deshabilitará todos los flujos de trabajo que comiencen con el número 1.
+
+### Notas
+
+- Asegúrate de tener la GitHub CLI (gh) instalada y configurada correctamente antes de ejecutar el script.
+- El script utiliza el comando `gh workflow list` para obtener la lista de flujos de trabajo disponibles en tu repositorio.
+- Se asume que los flujos de trabajo tienen prefijos numéricos seguidos de un guion ("-") en sus nombres. Modifica el script si tus flujos de trabajo siguen un patrón de nomenclatura diferente.
+- Los mensajes de error se redirigen a `/dev/null` para suprimir cualquier salida innecesaria.
 
 Para obtener más información sobre el uso de los comandos y la configuración de las acciones en el repositorio, consulta el código fuente del archivo `initial-setup.sh`.
 
