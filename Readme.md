@@ -43,7 +43,7 @@ Este archivo de acción se activa en respuesta a eventos relacionados con proble
 Este archivo de acción se activa en respuesta a eventos relacionados con problemas (issues) y eventos de disparo de flujo de trabajo (workflow_dispatch). Contiene un trabajo llamado "info" que se ejecuta en una máquina virtual de Ubuntu y muestra los detalles del evento.
 
 ### `1-Pull-request-Event.yml` 
-Este archivo de acción se activa en respuesta a eventos relacionados con solicitudes de extracción (pull_request) y eventos de disparo de flujo de trabajo (workflow_dispatch). Contiene tres trabajos: "deploy", "Test-parallel" y "Deploy". Estos trabajos realizan diversas tareas, como obtener el código, instalar dependencias, ejecutar pruebas y realizar implementaciones.
+Este archivo de acción se activa en respuesta a eventos relacionados con solicitudes de extracción (pull_request) y eventos de disparo de flujo de trabajo (workflow_dispatch). Contiene tres trabajos: **deploy**, "Test-parallel" y "Deploy". Estos trabajos realizan diversas tareas, como obtener el código, instalar dependencias, ejecutar pruebas y realizar implementaciones.
 
 ### `2-Jobs-Encadenados.yml`
 Este archivo de acción contiene una serie de trabajos que se encadenan entre sí. Los trabajos se ejecutan secuencialmente y el resultado de un trabajo se puede utilizar como entrada para otros trabajos.
@@ -67,5 +67,5 @@ Esta acción se activa cuando se realiza un push a la rama master o cuando se di
 Esta acción puede ser invocada desde otras acciones. Tiene una entrada llamada artifact-name que especifica el nombre de los archivos desplegables. Al ser invocada, ejecuta el trabajo deploy-inside, que descarga los archivos de artefacto, muestra información de despliegue y establece el resultado de la salida.
 
 ### `9-Own-actions.yml`
-Esta accion se ejecuta en respuesta a eventos de push y workflow_dispatch en la rama "master". Estos trabajos incluyen tareas estándar como la verificación de código, ejecución de pruebas, compilación de un sitio web y despliegue. Además, también utiliza acciones personalizadas para realizar ciertas operaciones, como cargar y cachear dependencias, y desplegar el sitio web en un bucket de S3 utilizando una acción personalizada específica
+Esta accion se ejecuta en respuesta a eventos de push y workflow_dispatch en la rama **master**. Estos trabajos incluyen tareas estándar como la verificación de código, ejecución de pruebas, compilación de un sitio web y despliegue. Además, también utiliza acciones personalizadas para realizar ciertas operaciones, como cargar y cachear dependencias, y desplegar el sitio web en un bucket de S3 utilizando una acción personalizada específica
 
