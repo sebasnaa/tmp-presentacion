@@ -1,18 +1,29 @@
-# Uso de Matrix
+# 6-Matrix
 
-## Fichero 
+Este repositorio contiene un flujo de trabajo automatizado que se activa en respuesta a eventos de push y eventos de disparo de flujo de trabajo (workflow_dispatch).
 
-[6-Matrix.yml](https://github.com/sebasnaa/tmp-presentacion/actions/workflows/6-Matrix.yml)
+## Job: Build
 
-## Objetivo
+- **Ejecución**: Se ejecuta en varias combinaciones definidas en la matriz.
+- **Estrategia**: Matriz de combinaciones con diferentes versiones de Node.js y sistemas operativos.
+- **Pasos**:
+  1. Obtener código utilizando la acción `actions/checkout@v3`.
+  2. Instalar Node.js utilizando la acción `actions/setup-node@v3` con la versión correspondiente especificada en la matriz.
+  3. Instalar las dependencias utilizando el comando `npm ci`.
+  4. Compilar el proyecto utilizando el comando `npm run build`.
 
-Comprobar el funcionamiento ``matrix`` que nos permite crear varios jobs basados en las combinaciones de las variables de la matrix.
+### Matriz
 
-## Funcionamiento
+La matriz define diferentes combinaciones de versiones de Node.js y sistemas operativos para ejecutar el trabajo de compilación. Las combinaciones se definen de la siguiente manera:
 
-1. Ejecutar de forma manual o usando push, deberian funcionar paralelamente.
+- `node-version`: Versiones de Node.js [16, 18]
+- `os`: Sistemas operativos [ubuntu-latest, windows-latest]
 
-2. Uso de include o exclude
+Si se produce un error en una combinación específica, por defecto, el flujo de trabajo se detendrá y no se ejecutarán más trabajos para esa combinación. Sin embargo, en este caso, se ha agregado el parámetro `continue-on-error: true` en la estrategia de la matriz para evitar que el flujo de trabajo se detenga en caso de errores.
+
+#### Ejemplos de uso
+
+1. Uso de include o exclude
 
 ```
     strategy:
@@ -27,7 +38,7 @@ Comprobar el funcionamiento ``matrix`` que nos permite crear varios jobs basados
             os: windows-latest
 
 ```
-3. Uso de continue-on-error
+2. Uso de continue-on-error
 ```
     continue-on-error: true
     strategy:

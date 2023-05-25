@@ -1,21 +1,39 @@
 #!/bin/bash
 
+actions=$(gh workflow list -a | awk '{print $1}')
+array=($actions)
 
-# gh workflow list -a | awk '{print $1}'
-gh workflow list -a
-
-
-gh workflow disable "1-Pull-request-Event"
-gh workflow disable "1-Push-Event"
-gh workflow disable "1-Issues-Event"
-gh workflow disable "2-Jobs-Encadenados"
-gh workflow disable "3-Variables-Context"
-gh workflow disable "4-Push-Using-Caching"
-gh workflow disable "4-Push-No-Using-Caching"
-gh workflow disable "5-Connecto-MongoDB"
-
-
-if [ $# -gt 0 ]
-  then
-    echo "valor $1"
+# Habilitamos las actions
+if [[ $1 == "enable" ]] then
+  for i in ${array[@]} 
+   do 
+       gh workflow enable $i 2> /dev/null
+   done
 fi
+# Deshabilitamos las actions
+if [[ $1 == "disable" ]] then
+  for i in ${array[@]} 
+   do 
+      gh workflow disable $i 2> /dev/null
+   done
+fi
+
+# Habilitamos las actions según el valor numerico inicial que contiene
+if [[ $1 == [1-9] ]]; then
+
+  nueva_lista=()
+  for elemento in "${array[@]}"
+  do
+    if [[ $elemento =~ ^$1-* ]]; then
+      nueva_lista+=("$elemento")
+    fi
+  done
+  for elemento in "${nueva_lista[@]}"
+  do
+    gh workflow enable $elemento 2> /dev/null
+  done
+
+
+fi
+
+
