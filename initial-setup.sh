@@ -9,6 +9,7 @@ if [[ $1 == "enable" ]] then
    do 
        gh workflow enable $i 2> /dev/null
    done
+   echo "Todos los workflow activados"
 fi
 # Deshabilitamos las actions
 if [[ $1 == "disable" ]] then
@@ -16,6 +17,7 @@ if [[ $1 == "disable" ]] then
    do 
       gh workflow disable $i 2> /dev/null
    done
+   echo "Todos los workflow desactivados"
 fi
 
 # Habilitamos las actions según el valor numerico inicial que contiene
@@ -33,6 +35,7 @@ if [[ $1 == [1-9] ]]; then
     gh workflow enable $elemento 2> /dev/null
   done
 
+  echo "Todos los workflow $1-* activados  " 
 
 fi
 
