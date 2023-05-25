@@ -66,6 +66,6 @@ Esta acción se activa cuando se realiza un push a la rama master o cuando se di
 ### `8-Reusable.yml` 
 Esta acción puede ser invocada desde otras acciones. Tiene una entrada llamada artifact-name que especifica el nombre de los archivos desplegables. Al ser invocada, ejecuta el trabajo deploy-inside, que descarga los archivos de artefacto, muestra información de despliegue y establece el resultado de la salida.
 
-### `El archivo 9-Own-actions.yml`
-contiene una serie de trabajos que se ejecutan en respuesta a eventos de push y workflow_dispatch en la rama "master". Estos trabajos incluyen tareas estándar como la verificación de código, ejecución de pruebas, compilación de un sitio web y despliegue. Además, también utiliza acciones personalizadas para realizar ciertas operaciones, como cargar y cachear dependencias, y desplegar el sitio web en un bucket de S3 utilizando una acción personalizada específica
+### `9-Own-actions.yml`
+Esta accion se ejecuta en respuesta a eventos de push y workflow_dispatch en la rama "master". Estos trabajos incluyen tareas estándar como la verificación de código, ejecución de pruebas, compilación de un sitio web y despliegue. Además, también utiliza acciones personalizadas para realizar ciertas operaciones, como cargar y cachear dependencias, y desplegar el sitio web en un bucket de S3 utilizando una acción personalizada específica
 
