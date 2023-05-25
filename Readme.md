@@ -43,7 +43,7 @@ Este archivo de acción se activa en respuesta a eventos relacionados con proble
 Este archivo de acción se activa en respuesta a eventos relacionados con problemas (issues) y eventos de disparo de flujo de trabajo (workflow_dispatch). Contiene un trabajo llamado "info" que se ejecuta en una máquina virtual de Ubuntu y muestra los detalles del evento.
 
 ### `1-Pull-request-Event.yml` 
-Este archivo de acción se activa en respuesta a eventos relacionados con solicitudes de extracción (pull_request) y eventos de disparo de flujo de trabajo (workflow_dispatch). Contiene tres trabajos: **deploy**, "Test-parallel" y "Deploy". Estos trabajos realizan diversas tareas, como obtener el código, instalar dependencias, ejecutar pruebas y realizar implementaciones.
+Este archivo de acción se activa en respuesta a eventos relacionados con solicitudes de extracción (pull_request) y eventos de disparo de flujo de trabajo (workflow_dispatch). Contiene tres trabajos: **deploy**, **Test-parallel** y **Deploy**. Estos trabajos realizan diversas tareas, como obtener el código, instalar dependencias, ejecutar pruebas y realizar implementaciones.
 
 ### `2-Jobs-Encadenados.yml`
 Este archivo de acción contiene una serie de trabajos que se encadenan entre sí. Los trabajos se ejecutan secuencialmente y el resultado de un trabajo se puede utilizar como entrada para otros trabajos.
