@@ -12,7 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Load and cache dependencies
         id: cache-deps
-        uses: ./.github/actions/cached-deps
+        # uses: ./.github/actions/cached-deps
+        uses: sebasnaatwo/pruebas/.github/actions/cached-deps
         with:
           caching: 'false'
       - name: Is cache used from Load and cache dependencies
@@ -51,35 +52,38 @@ jobs:
         with:
           name: dist-files
           path: dist
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    # environment: pro
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Get build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-files
-          path: ./dist
-      - name: Output contents
-        run: ls
-      - name: Deploy site
-        id: deploy
-        # uses: ./.github/actions/deploy-s3-javascript
-        # uses: ./.github/actions/deploy-s3-docker
-        uses: sebasnaa/deploy-s3-docker@v1
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        with:
-          bucket: sebasnaa-custom-hosting
-          dist-folder: ./dist
-          # bucket-region: 'eu-west-3'
-      - name: Show Website URL
-        run: |
-          echo "Live URL ${{ steps.deploy.outputs.webUrl }}"
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   # environment: pro
+  #   steps:
+  #     - name: Get code
+  #       uses: actions/checkout@v3
+  #     - name: Get build artifacts
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: dist-files
+  #         path: ./dist
+  #     - name: Output contents
+  #       run: ls
+  #     - name: Deploy site
+  #       id: deploy
+  #       # uses: ./.github/actions/deploy-s3-javascript
+  #       # uses: ./.github/actions/deploy-s3-docker
+  #       uses: sebasnaa/deploy-s3-docker@v1
+  #       env:
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #       with:
+  #         bucket: sebasnaa-custom-hosting
+  #         dist-folder: ./dist
+  #         # bucket-region: 'eu-west-3'
+  #     - name: Show Website URL
+  #       run: |
+  #         echo "Live URL ${{ steps.deploy.outputs.webUrl }}"
+
+
+
   # information:
   #   runs-on: ubuntu-latest
   #   steps:
