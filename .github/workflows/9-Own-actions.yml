@@ -16,7 +16,8 @@ jobs:
         id: cache-deps
         # uses: ./.github/actions/cached-deps
         # uses: sebasnaatwo/pruebas/.github/actions/cached-deps@master
-        uses: sebasnaatwo/pruebas/.github/actions@master
+
+        uses: sebasnaatwo/pruebas/.github/actions/action1.yml@master
         with:
           caching: 'false'
       - name: Is cache used from Load and cache dependencies
