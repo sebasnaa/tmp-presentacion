@@ -1,6 +1,11 @@
 name: 1-Push-Event
 on: 
-  push
+  push:
+    
+  issues:
+    types:
+      - edited
+      - deleted
 jobs:
   Lint:
     runs-on: ubuntu-latest
