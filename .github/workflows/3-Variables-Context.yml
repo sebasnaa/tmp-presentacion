@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Name of the new Rookies'
+        description: 'Name of the new SeaHorse'
         default: 'Arturo'
         required: true
 
