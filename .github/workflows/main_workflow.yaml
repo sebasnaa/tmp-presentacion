@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        param1: ${{ split(inputs.param1-values, ',') }}
+        param1: ['uno,dos'] #${{ split(inputs.param1-values, ',') }}
     steps:
       - name: pruebas
         run: echo "hola"
