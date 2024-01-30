@@ -19,6 +19,8 @@ jobs:
     strategy:
       matrix:
         param1: ${{ split(inputs.param1-values, ',') }}
+    name: pruebas
+    run: echo "hola"
   
   deploy:
     uses: ./.github/workflows/final_workflow.yml
