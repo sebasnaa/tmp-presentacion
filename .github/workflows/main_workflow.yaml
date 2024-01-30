@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
     
       - name: Run Workflow for Each Parameter Set
-        uses: sebasnaa/tmp-presentacion/.github/workflows/call-secondary-workflow/action.yml
+        uses: sebasnaa/tmp-presentacion/.github/workflows/call-secondary-workflow/action.yml@master
         with:
           param1: ${{ matrix.param_set.param1 }}
           param2: ${{ matrix.param_set.param2 }}
