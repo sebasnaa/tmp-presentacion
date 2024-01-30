@@ -18,15 +18,28 @@ jobs:
 
     strategy:
       matrix:
-        param1: ['uno,dos'] #${{ split(inputs.param1-values, ',') }}
+        param1: ['uno','dos'] #${{ split(inputs.param1-values, ',') }}
     steps:
       - name: pruebas
         run: echo "hola"
   
+  # deploy:
+  #   uses: ./.github/workflows/final_workflow.yml
+  #   with:
+  #     param1: dist-files
+
+
+
   deploy:
-    uses: ./.github/workflows/final_workflow.yml
-    with:
-      param1: dist-files
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        param1: ['uno', 'dos']
+    steps:
+      - name: Trigger Deploy Workflow
+        uses: ./.github/workflows/final_workflow.yml
+        with:
+          param1: ${{ matrix.param1 }}
 
     # steps:
     #   - name: Trigger Secondary Workflow
