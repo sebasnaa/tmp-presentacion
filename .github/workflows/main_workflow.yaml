@@ -34,12 +34,12 @@ jobs:
     strategy:
       matrix:
         param1: ['uno', 'dos']
-    steps:
-      - name: Trigger Deploy Workflow
-        # uses: ./.github/workflows/final_workflow.yml
-        uses: sebasnaa/tmp-presentacion/.github/workflows/final_workflow.yml@master
-        with:
-          param1: ${{ matrix.param1 }}
+
+    name: Trigger Deploy Workflow
+    # uses: ./.github/workflows/final_workflow.yml
+    uses: sebasnaa/tmp-presentacion/.github/workflows/final_workflow.yml@master
+    with:
+      param1: ${{ matrix.param1 }}
 
     # steps:
     #   - name: Trigger Secondary Workflow
