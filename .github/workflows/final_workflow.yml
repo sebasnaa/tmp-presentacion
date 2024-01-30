@@ -22,4 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Input
-        run: echo "Input received: ${{ inputs.input_value }}"
+        run: echo "Input received:" ${{ inputs.param1 }}
