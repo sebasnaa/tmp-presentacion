@@ -10,7 +10,7 @@ on:
         description: 'Values for param1'
         required: false
         # default: 'Sebas,Pepe,Felipe'
-        default: 'Sebas'
+        default: 'Sebas,Pepe'
 
 jobs:
   main-job:
