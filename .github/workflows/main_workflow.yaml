@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Run Workflow for Each Parameter Set
-        uses: .github/workflows/call-secondary-workflow/action.yml
+        uses: ./.github/workflows/call-secondary-workflow/action.yml
         with:
           param1: ${{ matrix.param_set.param1 }}
           param2: ${{ matrix.param_set.param2 }}
