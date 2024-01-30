@@ -7,31 +7,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  main-job:
-    runs-on: ubuntu-latest
 
+  define:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        param_set:
-          - param1: value1
-            param2: valueA
-          - param1: value2
-            param2: valueB
-          - param1: value3
-            param2: valueC
+        version: [10, 12, 14]
+        param1: ['value1', 'value2', 'value3']
+        param2: ['valueA', 'valueB', 'valueC']
 
-  
+  main-job:
+    needs: define
+    uses: sebasnaa/tmp-presentacion/.github/workflows/call-secondary-workflow/action.yml@master
+    with:
+      param1: ${{ matrix.param1 }}
+      param2: ${{ matrix.param2 }}
 
-    # steps:
 
-    #   - name: Checkout Repository
-    #     uses: actions/checkout@v4
+
     
-      - name: Run Workflow for Each Parameter Set
-        uses: sebasnaa/tmp-presentacion/.github/workflows/call-secondary-workflow/action.yml@master
-        with:
-          param1: ${{ matrix.param_set.param1 }}
-          param2: ${{ matrix.param_set.param2 }}
+
 
 
 
