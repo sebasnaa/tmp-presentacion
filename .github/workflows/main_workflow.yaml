@@ -21,7 +21,6 @@ jobs:
   #       param1: ${{ split(inputs.param1-values, ',') }}
   
   deploy:
-    needs: build
     uses: ./.github/workflows/final_workflow.yml
     with:
       param1: dist-files
