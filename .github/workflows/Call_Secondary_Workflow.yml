@@ -35,3 +35,8 @@ jobs:
       
       - name: Use Parameters in Secondary Job
         run: echo "Running secondary job with param1=${{ inputs.param1 }} and param2=${{ inputs.param2 }}"
+
+  deploy:
+    uses: ./.github/workflows/8-Reusable.yml
+    with:
+      artifact-name: dist-files
