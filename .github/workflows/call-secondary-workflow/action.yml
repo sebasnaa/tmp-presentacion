@@ -1,4 +1,4 @@
-name: Call Secondary Workflow
+name: Call_Secondary_Workflow
 
 on:
   workflow_call:

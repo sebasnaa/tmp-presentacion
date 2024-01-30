@@ -7,21 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
-
-  define:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: [10, 12, 14]
-        param1: ['value1', 'value2', 'value3']
-        param2: ['valueA', 'valueB', 'valueC']
-
   main-job:
-    needs: define
-    uses: sebasnaa/tmp-presentacion/.github/workflows/call-secondary-workflow/action.yml@master
-    with:
-      param1: ${{ matrix.param1 }}
-      param2: ${{ matrix.param2 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Secondary Workflow
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Authorization: Bearer ${{ secrets.SEBAS_ACC }}" \
+            "https://api.github.com/repos/sebasnaa/tmp-presentacion/dispatches" \
+            -d '{"event_type": "Call_Secondary_Workflow", "client_payload": {"param1": "value1", "param2": "value2"}}'
+
 
 
 
