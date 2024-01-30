@@ -20,7 +20,13 @@ jobs:
           - param1: value3
             param2: valueC
 
+  
+
     steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+    
       - name: Run Workflow for Each Parameter Set
         uses: ./.github/workflows/call-secondary-workflow/action.yml
         with:
