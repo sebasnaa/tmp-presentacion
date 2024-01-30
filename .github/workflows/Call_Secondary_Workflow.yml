@@ -1,7 +1,7 @@
 name: Call_Secondary_Workflow
 
 on:
-workflow_dispatch:
+  workflow_dispatch:
     inputs:
       param1: null
       param2: null
