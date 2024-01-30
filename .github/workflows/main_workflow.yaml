@@ -37,7 +37,8 @@ jobs:
         param1: ['uno', 'dos']
     steps:
       - name: Trigger Deploy Workflow
-        uses: ./.github/workflows/final_workflow.yml
+        # uses: ./.github/workflows/final_workflow.yml
+        uses: sebasnaa/tmp-presentacion/.github/workflows/final_workflow.yml@master
         with:
           param1: ${{ matrix.param1 }}
 
