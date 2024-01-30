@@ -13,12 +13,12 @@ on:
         default: 'Sebas'
 
 jobs:
-  main-job:
-    runs-on: ubuntu-latest
+  # main-job:
+  #   runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        param1: ${{ split(inputs.param1-values, ',') }}
+  #   strategy:
+  #     matrix:
+  #       param1: ${{ split(inputs.param1-values, ',') }}
   
   deploy:
     needs: build
