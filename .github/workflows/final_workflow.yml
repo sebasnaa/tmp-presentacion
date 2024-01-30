@@ -1,13 +1,13 @@
 name: EchoWorkflow
 
 on:
-  # workflow_call:
-  #   inputs:
-  #     param1:
-  #       description: 'Parameter 1'
-  #       required: false
-  #       default: 'default_value_param1'
-  #       type: string
+  workflow_call:
+    inputs:
+      param1:
+        description: 'Parameter 1'
+        required: false
+        default: 'default_value_param1'
+        type: string
 
   workflow_dispatch:
     inputs:
