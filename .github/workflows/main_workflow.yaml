@@ -40,7 +40,7 @@ jobs:
 
     strategy:
       matrix:
-        param1: ${{ split(inputs.param1-values, ',') }}
+        param1: ${{ toJson(split(inputs.param1-values, ',')) }}
 
     steps:
       - name: Trigger Secondary Workflow
