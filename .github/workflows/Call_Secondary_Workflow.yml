@@ -3,12 +3,12 @@ name: Call_Secondary_Workflow
 on:
   workflow_dispatch:
     inputs:
-      param1: null
-      param2: null
+      param1: ''
+      param2: ''
   workflow_call:
     inputs:
-      param1: null
-      param2: null
+      param1: ''
+      param2: ''
 
 jobs:
   secondary-job:
