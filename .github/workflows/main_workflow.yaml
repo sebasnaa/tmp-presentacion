@@ -38,14 +38,11 @@ jobs:
   main-job:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        param1: ${{ toJson(split(inputs.param1-values, ',')) }}
-
     steps:
       - name: Trigger Secondary Workflow
         run: |
-          for value in "${{ matrix.param1 }}"; do
+          IFS=',' read -ra values <<< "${{ inputs.param1-values }}"
+          for value in "${values[@]}"; do
             curl -L \
               -X POST \
               -H "Accept: application/vnd.github+json" \
