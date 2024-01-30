@@ -1,0 +1,27 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        param_set:
+          - param1: value1
+            param2: valueA
+          - param1: value2
+            param2: valueB
+          - param1: value3
+            param2: valueC
+
+    steps:
+      - name: Run Workflow for Each Parameter Set
+        uses: ./.github/workflows/call-secondary-workflow.yml
+        with:
+          param1: ${{ matrix.param_set.param1 }}
+          param2: ${{ matrix.param_set.param2 }}
