@@ -32,7 +32,7 @@ on:
       param1-values:
         description: 'Values for param1'
         required: false
-        default: 'Mona the Octocat'
+        default: 'Sebas,Pepe,Felipe'
 
 jobs:
   main-job:
