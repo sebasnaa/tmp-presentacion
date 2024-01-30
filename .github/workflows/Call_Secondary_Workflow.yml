@@ -25,18 +25,18 @@ on:
         type: string
 
 jobs:
-  secondary-job:
-    runs-on: ubuntu-latest
+  # secondary-job:
+  #   runs-on: ubuntu-latest
 
-    steps:
+  #   steps:
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@v4
       
-      - name: Use Parameters in Secondary Job
-        run: echo "Running secondary job with param1=${{ inputs.param1 }} and param2=${{ inputs.param2 }}"
+  #     - name: Use Parameters in Secondary Job
+  #       run: echo "Running secondary job with param1=${{ inputs.param1 }} and param2=${{ inputs.param2 }}"
 
   deploy:
-    uses: ./.github/workflows/8-Reusable.yml
+    uses: ./.github/workflows/final_workflow.yml
     with:
-      artifact-name: dist-files
+      input_value: ${{ inputs.param1 }}
