@@ -9,13 +9,13 @@ on:
         default: 'default_value_param1'
         type: string
 
-  workflow_dispatch:
-    inputs:
-      param1:
-        description: 'Parameter 1'
-        required: false
-        default: 'default_value_param1'
-        type: string
+  # workflow_dispatch:
+  #   inputs:
+  #     param1:
+  #       description: 'Parameter 1'
+  #       required: false
+  #       default: 'default_value_param1'
+  #       type: string
 
 jobs:
   echo_input:
