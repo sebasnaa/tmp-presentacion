@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
       - name: Use Parameters in Secondary Job
         run: echo "Running secondary job with param1=${{ inputs.param1 }} and param2=${{ inputs.param2 }}"
