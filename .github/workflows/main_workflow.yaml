@@ -31,7 +31,6 @@ jobs:
 
 
   deploy:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         param1: ['uno', 'dos']
