@@ -22,7 +22,7 @@ jobs:
   deploy:
     strategy:
       matrix:
-        param1: ['uno', 'dos']
+        param1: ['uno', 'dos','sdljkhfgvodsifh']
 
     name: Trigger Deploy Workflow
     # uses: ./.github/workflows/final_workflow.yml
